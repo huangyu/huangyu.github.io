@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title></title>
+  <title>小黑屋1</title>
   
-  
+  <subtitle>小黑屋2</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://huangyu.github.io/2018/08/22/hello-world/"/>
-    <id>https://huangyu.github.io/2018/08/22/hello-world/</id>
+    <link href="https://huangyu.github.io/archives/16107.html"/>
+    <id>https://huangyu.github.io/archives/16107.html</id>
     <published>2018-08-22T08:26:46.999Z</published>
     <updated>2018-08-23T06:42:31.427Z</updated>
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;!-- build time:Thu Aug 23 2018 17:12:44 GMT+0800 (CST) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot;
+          &lt;!-- build time:Thu Aug 23 2018 17:31:46 GMT+0800 (CST) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot;
         
       
     
