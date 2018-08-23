@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://huangyu.github.io/tags/index.html</loc>
+    <loc>https://huangyu.github.io/2018/08/22/hello-world/</loc>
     
-    <lastmod>2018-08-23T03:45:52.895Z</lastmod>
+    <lastmod>2018-08-23T06:42:31.427Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://huangyu.github.io/2018/08/22/hello-world/</loc>
+    <loc>https://huangyu.github.io/about/index.html</loc>
     
-    <lastmod>2018-08-23T03:41:05.633Z</lastmod>
+    <lastmod>2018-08-23T06:17:16.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huangyu.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-08-23T06:17:10.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huangyu.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-08-23T03:45:52.895Z</lastmod>
     
   </url>
   
