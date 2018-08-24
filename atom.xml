@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
-  <updated>2018-08-24T14:59:34.647Z</updated>
+  <updated>2018-08-24T15:32:35.346Z</updated>
   <id>https://huangyu.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://huangyu.github.io/archives/2720d64c.html"/>
     <id>https://huangyu.github.io/archives/2720d64c.html</id>
     <published>2018-08-24T07:52:00.000Z</published>
-    <updated>2018-08-24T14:59:34.647Z</updated>
+    <updated>2018-08-24T15:32:35.346Z</updated>
     
     <summary type="html">
     
-      &lt;!-- build time:Fri Aug 24 2018 23:01:01 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
+      &lt;!-- build time:Fri Aug 24 2018 23:32:49 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
     
     </summary>
     
@@ -45,7 +45,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Fri Aug 24 2018 23:01:01 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
+      &lt;!-- build time:Fri Aug 24 2018 23:32:49 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
     
     </summary>
     
