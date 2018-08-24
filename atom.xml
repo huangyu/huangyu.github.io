@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
-  <updated>2018-08-23T06:42:31.427Z</updated>
+  <updated>2018-08-24T06:45:15.134Z</updated>
   <id>https://huangyu.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://huangyu.github.io/archives/16107.html"/>
-    <id>https://huangyu.github.io/archives/16107.html</id>
-    <published>2018-08-22T08:26:46.999Z</published>
-    <updated>2018-08-23T06:42:31.427Z</updated>
+    <title>滑动选择布局SlidingCheckLayout的实现</title>
+    <link href="https://huangyu.github.io/archives/2ddc4008.html"/>
+    <id>https://huangyu.github.io/archives/2ddc4008.html</id>
+    <published>2018-08-24T06:45:15.000Z</published>
+    <updated>2018-08-24T06:45:15.134Z</updated>
     
     <summary type="html">
     
@@ -29,14 +29,12 @@
       
         
         
-          &lt;!-- build time:Fri Aug 24 2018 09:17:49 GMT+0800 (CST) --&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot;
+          &lt;!-- build time:Fri Aug 24 2018 14:45:29 GMT+0800 (CST) --&gt;&lt;!-- rebuild by neat
         
       
     
     </summary>
     
-    
-      <category term="hello" scheme="https://huangyu.github.io/tags/hello/"/>
     
   </entry>
   
