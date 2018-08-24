@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
-  <updated>2018-08-24T07:48:41.387Z</updated>
+  <updated>2018-08-24T08:22:58.302Z</updated>
   <id>https://huangyu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SlidingCheckLayout滑动选择布局实现</title>
+    <link href="https://huangyu.github.io/archives/2720d64c.html"/>
+    <id>https://huangyu.github.io/archives/2720d64c.html</id>
+    <published>2018-08-24T07:52:00.000Z</published>
+    <updated>2018-08-24T08:22:58.302Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- build time:Fri Aug 24 2018 16:23:11 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;SlidingCheckLayout&quot;&gt;&lt;a href=&quot;#SlidingCheckLayout&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="https://huangyu.github.io/categories/Android/"/>
+    
+    
+      <category term="自定义view" scheme="https://huangyu.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown语法</title>
@@ -29,7 +55,7 @@
       
         
         
-          &lt;!-- build time:Fri Aug 24 2018 15:48:54 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot;
+          &lt;!-- build time:Fri Aug 24 2018 16:23:11 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot;
         
       
     
