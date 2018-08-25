@@ -4,14 +4,16 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/2720d64c.html</loc>
-    <lastmod>2018-08-25T08:03:50.848Z</lastmod>
+    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
+    <lastmod>2018-08-25T08:07:31.478Z</lastmod>
     <data>
         <display>
-        <title>SlidingCheckLayout滑动选择布局实现</title>
-        <pubTime>2018-08-24T07:52:00.000Z</pubTime>
+        <title>动态代理和注解处理接口Token问题</title>
+        <pubTime>2018-08-25T08:01:20.000Z</pubTime>
         
-        <tag>自定义view</tag>
+        <tag>动态代理</tag>
+         
+        <tag>注解</tag>
          
          
            
@@ -25,7 +27,7 @@
     
   <url>
     <loc>https://huangyu.github.io/archives/3c50d03d.html</loc>
-    <lastmod>2018-08-25T08:03:46.254Z</lastmod>
+    <lastmod>2018-08-25T08:07:16.684Z</lastmod>
     <data>
         <display>
         <title>Markdown语法汇总</title>
@@ -44,16 +46,14 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
-    <lastmod>2018-08-25T08:03:40.997Z</lastmod>
+    <loc>https://huangyu.github.io/archives/2720d64c.html</loc>
+    <lastmod>2018-08-25T08:07:14.247Z</lastmod>
     <data>
         <display>
-        <title>动态代理和注解处理接口Token问题</title>
-        <pubTime>2018-08-25T08:01:20.000Z</pubTime>
+        <title>SlidingCheckLayout滑动选择布局实现</title>
+        <pubTime>2018-08-24T07:52:00.000Z</pubTime>
         
-        <tag>动态代理</tag>
-         
-        <tag>注解</tag>
+        <tag>自定义view</tag>
          
          
            
