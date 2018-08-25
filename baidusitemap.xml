@@ -4,30 +4,8 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
-    <lastmod>2018-08-25T08:01:20.178Z</lastmod>
-    <data>
-        <display>
-        <title>动态代理和注解处理接口Token问题</title>
-        <pubTime>2018-08-25T08:01:20.000Z</pubTime>
-        
-        <tag>动态代理</tag>
-         
-        <tag>注解</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://huangyu.github.io/archives/2720d64c.html</loc>
-    <lastmod>2018-08-24T15:32:35.346Z</lastmod>
+    <lastmod>2018-08-25T08:03:50.848Z</lastmod>
     <data>
         <display>
         <title>SlidingCheckLayout滑动选择布局实现</title>
@@ -47,7 +25,7 @@
     
   <url>
     <loc>https://huangyu.github.io/archives/3c50d03d.html</loc>
-    <lastmod>2018-08-24T10:59:42.278Z</lastmod>
+    <lastmod>2018-08-25T08:03:46.254Z</lastmod>
     <data>
         <display>
         <title>Markdown语法汇总</title>
@@ -59,6 +37,28 @@
            
              
               <breadCrumb title="Markdown" url="https://huangyu.github.io/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
+    <lastmod>2018-08-25T08:03:40.997Z</lastmod>
+    <data>
+        <display>
+        <title>动态代理和注解处理接口Token问题</title>
+        <pubTime>2018-08-25T08:01:20.000Z</pubTime>
+        
+        <tag>动态代理</tag>
+         
+        <tag>注解</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
           
         </display>
     </data>
