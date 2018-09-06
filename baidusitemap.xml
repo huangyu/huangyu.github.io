@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://huangyu.github.io/archives/2720d64c.html</loc>
+    <lastmod>2018-09-06T07:48:06.004Z</lastmod>
+    <data>
+        <display>
+        <title>SlidingCheckLayout滑动选择布局实现</title>
+        <pubTime>2018-08-24T07:52:00.000Z</pubTime>
+        
+        <tag>自定义view</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
     <lastmod>2018-08-30T06:41:16.319Z</lastmod>
     <data>
@@ -39,26 +59,6 @@
            
              
               <breadCrumb title="Markdown" url="https://huangyu.github.io/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://huangyu.github.io/archives/2720d64c.html</loc>
-    <lastmod>2018-08-25T08:07:14.247Z</lastmod>
-    <data>
-        <display>
-        <title>SlidingCheckLayout滑动选择布局实现</title>
-        <pubTime>2018-08-24T07:52:00.000Z</pubTime>
-        
-        <tag>自定义view</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
           
         </display>
     </data>
