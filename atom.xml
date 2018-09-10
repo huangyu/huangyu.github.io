@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
-  <updated>2018-09-06T11:48:36.098Z</updated>
+  <updated>2018-09-10T03:14:02.781Z</updated>
   <id>https://huangyu.github.io/</id>
   
   <author>
@@ -21,18 +21,16 @@
     <link href="https://huangyu.github.io/archives/22258b7f.html"/>
     <id>https://huangyu.github.io/archives/22258b7f.html</id>
     <published>2018-09-06T11:48:36.000Z</published>
-    <updated>2018-09-06T11:48:36.098Z</updated>
+    <updated>2018-09-10T03:14:02.781Z</updated>
     
     <summary type="html">
     
-      &lt;!-- build time:Mon Sep 10 2018 11:11:26 GMT+0800 (CST) --&gt;&lt;p&gt;组件化的优势：&lt;/p&gt;&lt;ul&gt;&lt;li&gt;代码架构更加清晰，降低项目的维护难度；&lt;/li&gt;&lt;li&gt;组件模式下可以加快编译速度，提高开发效率；&lt;/li&gt;&lt;li&gt;项目比较大的情况下，多团队独立开发不同模块，互不影响；&lt;/li&gt;&lt;li&gt;利于向插件化变更。&lt;/li&gt;&lt;/ul&gt;
+      &lt;!-- build time:Mon Sep 10 2018 11:15:19 GMT+0800 (CST) --&gt;&lt;p&gt;组件化的优势：&lt;/p&gt;&lt;ul&gt;&lt;li&gt;代码架构更加清晰，降低项目的维护难度；&lt;/li&gt;&lt;li&gt;组件模式下可以加快编译速度，提高开发效率；&lt;/li&gt;&lt;li&gt;项目比较大的情况下，多团队独立开发不同模块，互不影响；&lt;/li&gt;&lt;li&gt;利于向插件化变更。&lt;/li&gt;&lt;/ul&gt;
     
     </summary>
     
       <category term="Android" scheme="https://huangyu.github.io/categories/Android/"/>
     
-    
-      <category term="Android" scheme="https://huangyu.github.io/tags/Android/"/>
     
       <category term="组件化" scheme="https://huangyu.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
     
@@ -43,11 +41,11 @@
     <link href="https://huangyu.github.io/archives/cdd0265b.html"/>
     <id>https://huangyu.github.io/archives/cdd0265b.html</id>
     <published>2018-08-28T13:01:20.000Z</published>
-    <updated>2018-08-30T06:41:16.319Z</updated>
+    <updated>2018-09-10T03:14:31.478Z</updated>
     
     <summary type="html">
     
-      &lt;!-- build time:Mon Sep 10 2018 11:11:26 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;目前在做SDK时，网络层使用的框架是OkHttp + Retrofit，需要对外提供API方式的网络接口调用。&lt;/p&gt;&lt;p&gt;一般来说，后台都会有接口校验设计，需要在请求头包含部分加密参数进行验证。&lt;/p&gt;&lt;p&gt;我们的项目也是这样处理，外放的接口需要先调用登录接口获取Token，根据Token在请求头进行组合形成鉴权，才能成功通过后台的校验进行使用。&lt;/p&gt;&lt;p&gt;这时候想，如果每个接口都需要提前先获取Token，工作量非常大，于是想到了类似Java的AOP的面向切面处理方式，使用动态代理灵活在接口方法前插入获取Token逻辑。&lt;/p&gt;&lt;p&gt;而部分接口例如，获取验证码、登录相关的，并不需要Token，因此再自定义一个注解用于区别。&lt;/p&gt;
+      &lt;!-- build time:Mon Sep 10 2018 11:15:19 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;目前在做SDK时，网络层使用的框架是OkHttp + Retrofit，需要对外提供API方式的网络接口调用。&lt;/p&gt;&lt;p&gt;一般来说，后台都会有接口校验设计，需要在请求头包含部分加密参数进行验证。&lt;/p&gt;&lt;p&gt;我们的项目也是这样处理，外放的接口需要先调用登录接口获取Token，根据Token在请求头进行组合形成鉴权，才能成功通过后台的校验进行使用。&lt;/p&gt;&lt;p&gt;这时候想，如果每个接口都需要提前先获取Token，工作量非常大，于是想到了类似Java的AOP的面向切面处理方式，使用动态代理灵活在接口方法前插入获取Token逻辑。&lt;/p&gt;&lt;p&gt;而部分接口例如，获取验证码、登录相关的，并不需要Token，因此再自定义一个注解用于区别。&lt;/p&gt;
     
     </summary>
     
@@ -69,7 +67,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Mon Sep 10 2018 11:11:26 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
+      &lt;!-- build time:Mon Sep 10 2018 11:15:19 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
     
     </summary>
     
@@ -89,7 +87,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Mon Sep 10 2018 11:11:26 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
+      &lt;!-- build time:Mon Sep 10 2018 11:15:19 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
     
     </summary>
     
