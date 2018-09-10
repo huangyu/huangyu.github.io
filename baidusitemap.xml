@@ -4,16 +4,14 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
-    <lastmod>2018-09-10T03:14:31.478Z</lastmod>
+    <loc>https://huangyu.github.io/archives/22258b7f.html</loc>
+    <lastmod>2018-09-10T07:17:50.604Z</lastmod>
     <data>
         <display>
-        <title>动态代理和注解处理接口Token问题</title>
-        <pubTime>2018-08-28T13:01:20.000Z</pubTime>
+        <title>Android组件化初探</title>
+        <pubTime>2018-09-06T11:48:36.000Z</pubTime>
         
-        <tag>动态代理</tag>
-         
-        <tag>注解</tag>
+        <tag>组件化</tag>
          
          
            
@@ -26,14 +24,16 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/22258b7f.html</loc>
-    <lastmod>2018-09-10T03:14:02.781Z</lastmod>
+    <loc>https://huangyu.github.io/archives/cdd0265b.html</loc>
+    <lastmod>2018-09-10T03:14:31.478Z</lastmod>
     <data>
         <display>
-        <title>Android组件化初探</title>
-        <pubTime>2018-09-06T11:48:36.000Z</pubTime>
+        <title>动态代理和注解处理接口Token问题</title>
+        <pubTime>2018-08-28T13:01:20.000Z</pubTime>
         
-        <tag>组件化</tag>
+        <tag>动态代理</tag>
+         
+        <tag>注解</tag>
          
          
            
