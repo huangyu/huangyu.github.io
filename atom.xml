@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangyu.github.io/"/>
-  <updated>2018-09-12T06:05:09.761Z</updated>
+  <updated>2018-09-13T07:37:58.783Z</updated>
   <id>https://huangyu.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Picasso源码分析</title>
+    <link href="https://huangyu.github.io/archives/38a31505.html"/>
+    <id>https://huangyu.github.io/archives/38a31505.html</id>
+    <published>2018-09-13T07:37:58.000Z</published>
+    <updated>2018-09-13T07:37:58.783Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;Picasso介绍&quot;&gt;&lt;a href=&quot;#Picasso介绍&quot; class=&quot;headerlink&quot; title=&quot;Picasso介绍&quot;&gt;&lt;/a&gt;Picasso介绍&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/square/picasso&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/square/picasso&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Picasso是Android开发中常用的几大图片加载库之一，除此之外常用的还有UIL、Glide、Fresco等。&lt;br&gt;目前UIL作者已经不再维护，Glide源码比较复杂，Fresco涉及c语言层面。相比之下Picasso写得比较简洁、规范，更好入手分析。&lt;/p&gt;&lt;p&gt;通过分析Picasso源码来对Android的图片加载有更深入的理解。&lt;/p&gt;&lt;p&gt;目前最新版本为2.71828（奇葩的版本号），本文基于此分析。&lt;/p&gt;&lt;p&gt;最新的使用方式为：&lt;br&gt;&lt;/p&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;PicassoProvider.get().load(&amp;quot;url&amp;quot;).into(imageview)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;下面就根据这个调用流程来分析其源码。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://huangyu.github.io/categories/Android/"/>
+    
+    
+      <category term="源码分析" scheme="https://huangyu.github.io/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>Android P使用私有API弹出warning</title>
@@ -29,7 +49,7 @@
       
         
         
-          &lt;!-- build time:Wed Sep 12 2018 14:05:22 GMT+0800 (CST) --&gt;&lt;p&gt;最近手头的Mix2s接收到MIUI官方开发版的推送，可以升级为Android
+          &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;p&gt;最近手头的Mix2s接收到MIUI官方开发版的推送，可以升级为Android
         
       
     
@@ -51,7 +71,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Wed Sep 12 2018 14:05:22 GMT+0800 (CST) --&gt;&lt;p&gt;组件化的优势：&lt;/p&gt;&lt;ul&gt;&lt;li&gt;代码架构更加清晰，降低项目的维护难度；&lt;/li&gt;&lt;li&gt;组件模式下可以加快编译速度，提高开发效率；&lt;/li&gt;&lt;li&gt;项目比较大的情况下，多团队独立开发不同模块，互不影响；&lt;/li&gt;&lt;li&gt;利于向插件化变更。&lt;/li&gt;&lt;/ul&gt;
+      &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;p&gt;组件化的优势：&lt;/p&gt;&lt;ul&gt;&lt;li&gt;代码架构更加清晰，降低项目的维护难度；&lt;/li&gt;&lt;li&gt;组件模式下可以加快编译速度，提高开发效率；&lt;/li&gt;&lt;li&gt;项目比较大的情况下，多团队独立开发不同模块，互不影响；&lt;/li&gt;&lt;li&gt;利于向插件化变更。&lt;/li&gt;&lt;/ul&gt;
     
     </summary>
     
@@ -71,7 +91,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Wed Sep 12 2018 14:05:22 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;目前在做SDK时，网络层使用的框架是OkHttp + Retrofit，需要对外提供API方式的网络接口调用。&lt;/p&gt;&lt;p&gt;一般来说，后台都会有接口校验设计，需要在请求头包含部分加密参数进行验证。&lt;/p&gt;&lt;p&gt;我们的项目也是这样处理，外放的接口需要先调用登录接口获取Token，根据Token在请求头进行组合形成鉴权，才能成功通过后台的校验进行使用。&lt;/p&gt;&lt;p&gt;这时候想，如果每个接口都需要提前先获取Token，工作量非常大，于是想到了类似Java的AOP的面向切面处理方式，使用动态代理灵活在接口方法前插入获取Token逻辑。&lt;/p&gt;&lt;p&gt;而部分接口例如，获取验证码、登录相关的，并不需要Token，因此再自定义一个注解用于区别。&lt;/p&gt;
+      &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;目前在做SDK时，网络层使用的框架是OkHttp + Retrofit，需要对外提供API方式的网络接口调用。&lt;/p&gt;&lt;p&gt;一般来说，后台都会有接口校验设计，需要在请求头包含部分加密参数进行验证。&lt;/p&gt;&lt;p&gt;我们的项目也是这样处理，外放的接口需要先调用登录接口获取Token，根据Token在请求头进行组合形成鉴权，才能成功通过后台的校验进行使用。&lt;/p&gt;&lt;p&gt;这时候想，如果每个接口都需要提前先获取Token，工作量非常大，于是想到了类似Java的AOP的面向切面处理方式，使用动态代理灵活在接口方法前插入获取Token逻辑。&lt;/p&gt;&lt;p&gt;而部分接口例如，获取验证码、登录相关的，并不需要Token，因此再自定义一个注解用于区别。&lt;/p&gt;
     
     </summary>
     
@@ -93,7 +113,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Wed Sep 12 2018 14:05:22 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
+      &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;项目需求，要求在选择本地图片时，可对图片进行滑动选择。类似小米图库或者图库，现在很多手机系统内置图库都自带了这个功能。最后经过调研，使用自定义View解决。SlidingCheckLayout滑动选择布局，用于嵌套RecyclerView实现滑动选择功能。&lt;/p&gt;
     
     </summary>
     
@@ -113,7 +133,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Wed Sep 12 2018 14:05:22 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
+      &lt;!-- build time:Thu Sep 13 2018 15:38:03 GMT+0800 (CST) --&gt;&lt;p&gt;Markdown语法汇总&lt;/p&gt;
     
     </summary>
     
