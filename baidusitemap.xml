@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://huangyu.github.io/archives/eeda3694.html</loc>
+    <lastmod>2018-09-21T01:10:55.501Z</lastmod>
+    <data>
+        <display>
+        <title>git-flow分支策略</title>
+        <pubTime>2018-09-20T13:32:53.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://huangyu.github.io/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://huangyu.github.io/archives/38a31505.html</loc>
-    <lastmod>2018-09-18T09:02:26.728Z</lastmod>
+    <lastmod>2018-09-18T09:05:42.802Z</lastmod>
     <data>
         <display>
         <title>Picasso源码分析</title>
