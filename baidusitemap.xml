@@ -4,14 +4,16 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/14e70aec.html</loc>
-    <lastmod>2018-10-17T07:30:22.968Z</lastmod>
+    <loc>https://huangyu.github.io/archives/d27d50fd.html</loc>
+    <lastmod>2018-10-18T02:06:41.187Z</lastmod>
     <data>
         <display>
-        <title>TCP三次握手与四次挥手</title>
-        <pubTime>2018-10-17T07:08:56.000Z</pubTime>
+        <title>HTTP知识</title>
+        <pubTime>2018-10-16T07:28:12.000Z</pubTime>
         
-        <tag>TCP</tag>
+        <tag>HenCoder</tag>
+         
+        <tag>HTTP</tag>
          
          
            
@@ -24,16 +26,14 @@
 
     
   <url>
-    <loc>https://huangyu.github.io/archives/d27d50fd.html</loc>
-    <lastmod>2018-10-17T07:30:11.421Z</lastmod>
+    <loc>https://huangyu.github.io/archives/14e70aec.html</loc>
+    <lastmod>2018-10-17T07:30:22.968Z</lastmod>
     <data>
         <display>
-        <title>HTTP知识</title>
-        <pubTime>2018-10-16T07:28:12.000Z</pubTime>
+        <title>TCP三次握手与四次挥手</title>
+        <pubTime>2018-10-17T07:08:56.000Z</pubTime>
         
-        <tag>HenCoder</tag>
-         
-        <tag>HTTP</tag>
+        <tag>TCP</tag>
          
          
            
