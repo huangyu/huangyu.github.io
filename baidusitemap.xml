@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://huangyu.github.io/archives/41113d0.html</loc>
+    <lastmod>2018-11-01T06:33:15.293Z</lastmod>
+    <data>
+        <display>
+        <title>Retrofit源码分析</title>
+        <pubTime>2018-10-18T07:42:28.000Z</pubTime>
+        
+        <tag>源码分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://huangyu.github.io/archives/c92f2cb8.html</loc>
+    <lastmod>2018-11-01T06:33:12.119Z</lastmod>
+    <data>
+        <display>
+        <title>OkHttp源码分析</title>
+        <pubTime>2018-11-01T06:33:12.000Z</pubTime>
+        
+        <tag>源码分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://huangyu.github.io/archives/386e4652.html</loc>
+    <lastmod>2018-10-31T06:51:27.850Z</lastmod>
+    <data>
+        <display>
+        <title>编码、加密、Hash、序列化</title>
+        <pubTime>2018-10-16T07:28:18.000Z</pubTime>
+        
+        <tag>密码学、Hash、编码</tag>
+         
+         
+           
+             
+              <breadCrumb title="基础知识" url="https://huangyu.github.io/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://huangyu.github.io/archives/c521d2cf.html</loc>
     <lastmod>2018-10-30T07:00:19.552Z</lastmod>
     <data>
@@ -17,26 +77,6 @@
            
              
               <breadCrumb title="属性动画" url="https://huangyu.github.io/categories/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://huangyu.github.io/archives/41113d0.html</loc>
-    <lastmod>2018-10-18T07:42:28.101Z</lastmod>
-    <data>
-        <display>
-        <title>Retrofit源码分析</title>
-        <pubTime>2018-10-18T07:42:28.000Z</pubTime>
-        
-        <tag>源码分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
           
         </display>
     </data>
@@ -101,26 +141,6 @@
            
              
               <breadCrumb title="网络" url="https://huangyu.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://huangyu.github.io/archives/386e4652.html</loc>
-    <lastmod>2018-10-16T07:28:18.543Z</lastmod>
-    <data>
-        <display>
-        <title>编码、加密、Hash、序列化</title>
-        <pubTime>2018-10-16T07:28:18.000Z</pubTime>
-        
-        <tag>密码学、Hash、编码</tag>
-         
-         
-           
-             
-              <breadCrumb title="基础知识" url="https://huangyu.github.io/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
           
         </display>
     </data>
