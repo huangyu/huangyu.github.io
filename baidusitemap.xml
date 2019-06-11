@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://huangyu.github.io/archives/42d18a47.html</loc>
-    <lastmod>2019-06-11T03:03:47.574Z</lastmod>
+    <lastmod>2019-06-11T03:25:41.668Z</lastmod>
     <data>
         <display>
         <title>IMAP协议操作示例</title>
@@ -25,7 +25,7 @@
     
   <url>
     <loc>https://huangyu.github.io/archives/49f470d6.html</loc>
-    <lastmod>2019-06-11T03:03:33.940Z</lastmod>
+    <lastmod>2019-06-11T03:19:52.043Z</lastmod>
     <data>
         <display>
         <title>eml文件格式</title>
@@ -37,6 +37,26 @@
            
              
               <breadCrumb title="邮件" url="https://huangyu.github.io/categories/%E9%82%AE%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://huangyu.github.io/archives/c521d2cf.html</loc>
+    <lastmod>2019-06-11T03:17:29.208Z</lastmod>
+    <data>
+        <display>
+        <title>Android属性动画</title>
+        <pubTime>2018-10-30T07:00:19.000Z</pubTime>
+        
+        <tag>属性动画</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://huangyu.github.io/categories/Android/"/>
           
         </display>
     </data>
@@ -161,26 +181,6 @@
            
              
               <breadCrumb title="基础知识" url="https://huangyu.github.io/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://huangyu.github.io/archives/c521d2cf.html</loc>
-    <lastmod>2018-10-30T07:00:19.552Z</lastmod>
-    <data>
-        <display>
-        <title>Android属性动画</title>
-        <pubTime>2018-10-30T07:00:19.000Z</pubTime>
-        
-        <tag>属性动画</tag>
-         
-         
-           
-             
-              <breadCrumb title="属性动画" url="https://huangyu.github.io/categories/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/"/>
           
         </display>
     </data>
