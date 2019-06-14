@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[登录密码正则表达式]]></title>
+    <url>%2Farchives%2Ffd455f4d.html</url>
+    <content type="text"><![CDATA[最近收到产品需求，需要对原邮件密码规则进行修改。先由客户端修改密码规则，服务端后续才进行更新。具体需求如下：1234561.新密码必须包含大写字母、小写字母、数字、特殊字符任意3种组合2.长度至少为8位3.不能包含自身账号4.不包含3位以上相同字符5.不能是最近5次使用密码6.特殊字符仅限.~!@$_原有密码校验规则与新规则区别较大，且历史代码写得比较混乱，因此打算重新设计。匹配规则还是挺复杂的，一步步来。1新密码必须包含大写字母、小写字母、数字、特殊字符任意3种组合首先根据这条，网上很多正则表达式是这种：1&quot;^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&amp;])[A-Za-z\d$@$!%*?&amp;]&#123;8,&#125;&quot;但是这种是至少包含至少一个大写字母，一个小写字母，一个数字和一个特殊字符，正则表达式里只有或，并不好区分”任意”这种说法。因此实现思路是，需要分别设计大写字母、小写字母、数字、特殊字符的判断，再通过Pattern.match(regex, password)判断符合种数，大于3才表示匹配此规则。其他特殊字符太多，无法进行排除，考虑换个方式，这样写可以设定取出以下字符：1[A-Za-z0-9_~@#$]+但是这样写并无法排除穿插在其中的特殊字符，比如”!22A123B2!##@$#@!”，这三个感叹号会分割匹配结果，并没有排除掉感叹号情况。此时需要通过正向预查表达式（?=exp），它断言自身出现的位置的后面能匹配表达式exp。即必须包含exp，只要将大写字母表达式写在exp即可。匹配单个大写字符：1[A-Z]匹配任意字符多次，包含大写字符：1.*[A-Z]于是包含大写的正向预查表达式出来了：1(?=.*[A-Z])但是在正则表达式测试网站测试，这个表达式并不能匹配出任何字符，原因他只是个断言，所以最终得出的包含大写字母的表达式如下：1^(?=.*?[A-Z])[A-Za-z0-9_~@#$]+$类似可分别得出包含小写字母、数字、特殊字符的表达式。长度至少为8位，正则表达式：1&#123;8,&#125;但是由于第一条规则的正则表达式已经进行了拆解，所以通过Java代码实现。不能包含3位以上相同字符：1([0-9a-zA-Z.~!@$_])\1&#123;2&#125;“\1”代表第一个圆括号表达式的值，”{2}”代表至少匹配两次。为了加速匹配还可以一开始进行字符集判断，含有其他特殊字符的就不进行下述的排查：1^[A-Za-z0-9.~!@$_]+$于是密码匹配规则伪代码出来了:12345678910111213141516171819public int passwordMatching(String password, String account) &#123; // 1.判断是否包含其他不合法字符^[A-Za-z0-9.~!@$_]+$ // 2.判断长度至少为8位 // 3.判断不能包含自身账号 // 4.判断新密码必须包含大写字母、小写字母、数字、特殊字符任意3种组合 int level = 0; for (String regex : regexArray) &#123; if (Pattern.matches(regex, str)) &#123; level++; &#125; &#125; int PASS_LEVEL = 3; return level &gt;= PASS_LEVEL? SUCCEED : FAILED;&#125;// 5.不能是最近5次使用密码这个客户端不好处理，由服务端判断。Done.]]></content>
+      <categories>
+        <category>正则表达式</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SMTP协议]]></title>
     <url>%2Farchives%2F70136309.html</url>
     <content type="text"><![CDATA[参考RFC5321SMTP协议是工作在两种情况下：电子邮件从客户机传输到服务器（发信）；从某一个服务器传输到另一个（转发）。SMTP工作流程：SMTP客户端和SMTP服务器建立TCP连接，客户端发起连接请求。连接建立后，服务器向客户发送响应报文，其应答码为220，表示服务准备就绪。客户端收到响应报文后，发送HELO命令，启动客户端和服务器直间的SMTP会话。服务器发送响应报文，其应答码是250，通知客户端：请求建立的邮件服务会话已经实现。服务器发送应答码334，等待用户输入验证信息；用户输入验证信息后，服务器发送应答码235，表示用户验证成功。客户端通过mail from向服务器发送发信人的邮箱和域名。服务器响应应答码250，表示请求命令完成。客户端通过rept to命令向服务器发送收件人的邮箱和域名。服务器响应应答码250，表示请求命令完成。服务器通过data命令对报文的传送进行初始化。服务器响应应答码354，表示可以进行邮件传输。客户端向服务器传送数据。传输完成，服务器响应应答码250，表示请求命令完成。客户端发送QUIT命令，终止连接。服务器响应应答码221，表示SMTP服务关闭，结束会话。客户端和服务器关闭TCP连接。]]></content>
@@ -20,29 +31,6 @@
       </categories>
       <tags>
         <tag>EML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[IMAP协议操作示例]]></title>
-    <url>%2Farchives%2F42d18a47.html</url>
-    <content type="text"><![CDATA[参考rfc3501IMAP端口HTTP：telnet143用户登录a login@列出邮箱a list “” “”选择文件夹a select INBOX查询所有新邮件a search NEW获取邮件a fetch参数sequence set:：读取的邮件序列集，例如n : n + x参数message data item names or macro：邮件数据项名称，例如ALL、BODY、FAST、FULL等获取邮件标志位邮件标志位说明\Seen 已读\Answered 已回复\Flagged 已标记\Deleted 标记删除，通过EXPUNGE指令删除\Draft 草稿\Recent 最近未读设置邮件标注位永久删除邮件a expunge：永久删除当前邮箱INBOX中所有设置了/Deleted标志的信件退出a logout]]></content>
-      <categories>
-        <category>邮件</category>
-      </categories>
-      <tags>
-        <tag>IMAP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ListView和RecyclerView核心要点]]></title>
-    <url>%2Farchives%2F24ddfddc.html</url>
-    <content type="text"><![CDATA[背景RecyclerrView是在有限的窗口内展示大量的数据集的Android官方控件。用以代替传统的ListView、GridView实现的布局。ListView的局限：只有纵向列表布局没有支持动画API性能较差，只支持整个列表刷新没有强制使用ViewHolderRecyclerView的优势：默认支持Linear、Grid、Staggered Grid三种布局，支持横向列表布局友好的ItemAnimator动画API强制实现ViewHolder相比ListView有更好的性能ViewHolder的作用ViewHolder用于持有View控件，解决findViewById的DFS搜索带来的o(n)复杂度，提高性能。在ListView的BaseAdapter中，没有用ViewHolder前：12345678910111213@Overridepublic View getView(int position, View convertView, ViewGroup parent) &#123; if (convertView == null) &#123; convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fasdk_item_select_album, parent, false); &#125; TextView nameTv = convertView.findViewById(R.id.tv_name); User user = getItem(position); nameTv.setText(user.getName()); return convertView;&#125;使用ViewHolder后：12345678910111213141516171819@Overridepublic View getView(int position, View convertView, ViewGroup parent) &#123; ViewHolder viewHolder; if (convertView == null) &#123; convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false); viewHolder = new ViewHolder(convertView); TextView nameTv = convertView.findViewById(R.id.tv_name); convertView.setTag(viewHolder); &#125; else &#123; viewHolder = (ViewHolder) convertView.getTag(); &#125; User user = getItem(position); viewHolder.name.setText(user.getName()); return convertView;&#125;ListView的缓存ListView的缓存主要是缓存View。RecycleBin用于管理缓存。ListView缓存主要有两级：mActiveViews：对应屏幕内缓存，用于快速重用屏幕上可见的列表项ItemView，而不需要重新createView和bindView。mScrapViews：在于缓存离开屏幕的ItemView，目的是让即将进入屏幕的ItemView重用，复用需要bindView。ListView缓存流程：从mActiveViews通过pos查找View缓存；从Scrap查找View缓存，重新bindView；从getView重新创建View。RecyclerView的缓存RecyclerView的缓存是缓存RecyclerView.ViewHolder，通过Recycler管理。RecyclerView缓存有四级：mChangedScrap和mAttachedScrap并称为Scrap。mChangedScrap：表示数据已经改变的viewewHolder列表；mAttachedScrap：类似ListView的mActiveViews，对应屏幕内缓存，用于快速重用屏幕上可见的列表项ItemView；mCachedViews：ViewHolder缓存列表，其大小由mViewCacheMax决定，默认DEFAULT_CACHE_SIZE为2。mViewCacheExtension：支持开发者自定义缓存处理逻辑。mRecyclerViewPool：在有限的mCachedViews中如果存不下ViewHolder时，就会把ViewHolder存入RecyclerViewPool中。支持所有RecyclerView共用同一个RecyclerViewPool。RecyclerView缓存流程：从mChangedScrap通过pos或者id获取viewHolder缓存。从mAttachedScrap通过pos查找viewHolder缓存；从mCacheViews通过pos查找viewHolder缓存；从mViewCacheExtension中获取自定义缓存；从mRecyclerViewPool中获取缓存，清除viewHolder标志位，重新bindViewHolder；从createViewHolder重新创建ViewHolder。RecyclerView的优势在于：mCacheViews的使用，可以做到部分屏幕外的列表项ItemView进入屏幕内时也无须bindView快速重用；mRecyclerPool可以供多个RecyclerView共同使用，在特定场景下，如viewpaper+多个列表页下有优势。RecyclerView局部刷新以RecyclerView.Adapter.notifyItemChanged(1)为例：123public final void notifyItemChanged(int position) &#123; mObservable.notifyItemRangeChanged(position, 1);&#125;调用AdapterDataObservable的notifyItemRangeChanged：123456789public void notifyItemRangeChanged(int positionStart, int itemCount) &#123; notifyItemRangeChanged(positionStart, itemCount, null);&#125;public void notifyItemRangeChanged(int positionStart, int itemCount, @Nullable Object payload) &#123; for (int i = mObservers.size() - 1; i &gt;= 0; i--) &#123; mObservers.get(i).onItemRangeChanged(positionStart, itemCount, payload); &#125;&#125;此处的Observer即RecyclerViewDataObserver：12345678910111213141516@Overridepublic void onItemRangeChanged(int positionStart, int itemCount, Object payload) &#123; assertNotInLayoutOrScroll(null); if (mAdapterHelper.onItemRangeChanged(positionStart, itemCount, payload)) &#123; triggerUpdateProcessor(); &#125;&#125;void triggerUpdateProcessor() &#123; if (POST_UPDATES_ON_ANIMATION &amp;&amp; mHasFixedSize &amp;&amp; mIsAttached) &#123; ViewCompat.postOnAnimation(RecyclerView.this, mUpdateChildViewsRunnable); &#125; else &#123; mAdapterUpdateDuringMeasure = true; requestLayout(); &#125;&#125;可以看到最终会调用requestLayout()，使整个RecyclerView重新绘制。此前已分析过View绘制流程：onMeasure()；onLayout()；onDraw()。其中，onLayout()为重点，核心为dispatchLayout()：1234567891011121314151617181920void dispatchLayout() &#123; ... mState.mIsMeasuring = false; if (mState.mLayoutStep == State.STEP_START) &#123; // 记录RecyclerView刷新前列表项ItemView的各种信息，如Top,Left,Bottom,Right，用于动画的相关计算； dispatchLayoutStep1(); mLayout.setExactMeasureSpecsFrom(this); // 真正测量布局大小，位置，核心函数为LayoutManager.onLayoutChildren()； dispatchLayoutStep2(); &#125; else if (mAdapterHelper.hasUpdates() || mLayout.getWidth() != getWidth() || mLayout.getHeight() != getHeight()) &#123; mLayout.setExactMeasureSpecsFrom(this); // 真正测量布局大小，位置，核心函数为LayoutManager.onLayoutChildren()； dispatchLayoutStep2(); &#125; else &#123; mLayout.setExactMeasureSpecsFrom(this); &#125; // 计算布局前后各个ItemView的状态，如Remove，Add，Move，Update等，如有必要执行相应的动画. dispatchLayoutStep3();&#125;来看看LinearLayoutManager的onLayoutChildren()：1234567891011121314151617181920212223242526@Overridepublic void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) &#123; ... // 处理边界相关问题 // 根据View的Flag标志位将其移动至Recycler不同缓存 detachAndScrapAttachedViews(recycler); ... // 查找可用空间，测量ItemView大小并放置 fill(); ...&#125;int fill(RecyclerView.Recycler recycler, LayoutState layoutState, RecyclerView.State state, boolean stopOnFocusable) &#123; ... while ((layoutState.mInfinite || remainingSpace &gt; 0) &amp;&amp; layoutState.hasMore(state)) &#123; ... // 通过getViewForPosition获取ItemView，测量其大小和位置 layoutChunk(recycler, state, layoutState, layoutChunkResult); ... &#125; ... return start - layoutState.mAvailable;&#125;当调用notifyItemChanged时，会对屏幕内ItemView做预处理，修改ItemView相应的pos以及flag，例如：FLAG_UPDATE。当调用fill()中layoutChunk的RecyclerView.getViewForPosition(pos)，获取ItemView时，RecyclerView通过对pos和flag的预处理，使得bindview只调用一次。getViewForPosition流程借用其他博客一张图：如图所示，通过pos和flag标志哪些ItemView需要变化，只处理变化的ItemView即可。可见标志flag的作用是判断view是否需要重新bindView，这也是RecyclerView实现局部刷新的核心.]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>RecyclerView</tag>
-        <tag>ListView</tag>
       </tags>
   </entry>
   <entry>
@@ -145,18 +133,6 @@
       <tags>
         <tag>HenCoder</tag>
         <tag>HTTP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[kotlin设计模式]]></title>
-    <url>%2Farchives%2F5ff9cb15.html</url>
-    <content type="text"><![CDATA[kotlin设计模式简单工厂定义一个工厂类，它可以根据参数的不同返回不同类的实例。SimpleFactory.kt工厂方法工厂方法把创建对象的过程抽象为接口，由工厂的子类决定对象的创建。FactoryMethod.kt抽象工厂工厂方法针对一种产品，而抽象工厂是针对一系列产品，为每种产品定义一个工厂方法，工厂子类负责创建该系列的多种产品。AbstractFactory.kt单例单例模式在Kotlin下直接使用object就行了。Singleton.kt建造者建造者模式是为了构建复杂对象的，一般情况下，Kotlin中使用标准的apply函数就可以。Builder.kt原型原型模式是以一个对象为原型，创建出一个新的对象，在Kotlin下很容易实现，用data class的copy就可以。Prototype.kt适配器适配器模式是把一个不兼容的接口转化为另一个类可以使用的接口。Adapter.kt桥接桥接模式可以分离某个类存在两个独立变化的纬度，把多层继承结构改为两个独立的继承结构，在两个抽象层中有一个抽象关联。Bridge.kt组合组合模式是对树形结构的处理，让调用者忽视单个对象和组合结构的差异。Composite.kt装饰装饰模式可以给一个对象添加额外的行为，在Kotlin下可以用扩展函数实现。Decorator.kt外观外观模式是为一个复杂的子系统提供一个简化的统一接口。Facade.kt享元享元模式以共享的方式高效地支持大量细粒度对象的重用，享元对象能做到共享的关键是区分了可共享内部状态和不可共享外部状态。FlyWeight.kt代理代理模式是使用一个代理对象来访问目标对象的行为。Proxy.kt责任链职责链模式通过建立一条链来组织请求的处理者，请求将沿着链进行传递。ChainReponsibility.kt命令命令模式是将请求封装为命令对象，解耦请求发送者与接收者，对请求排队或者记录请求日志，以及支持可撤销的操作。Command.kt解释器模式解释器模式是定义一个语言的文法，并且建立一个解释器来解释该语言中的句子，这里的“语言”是指使用规定格式和语法的代码。Interpreter.kt迭代器迭代器模式提供一种不暴露底层实现情况下的遍历聚合对象中的元素的一种方式。Iterator.kt中介者中介者模式用一个中介对象（中介者）来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。Mediator.kt备忘录备忘录模式是在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。Memento.kt观察者观察者模式是一个对象状态发生变化后，可以立即通知已订阅的另一个对象。Observer.kt状态模式状态模式将一个对象在不同状态下的不同行为封装在一个个状态类中，通过设置不同的状态可以让对象拥有不同的行为。State.kt策略模式策略模式用于算法的自由切换和扩展，分离算法的定义与实现，在 Kotlin 中可以使用高阶函数作为算法的抽象。Strategy.kt模版方法模板方法模式提供了一个模板方法来定义算法框架，而某些具体步骤的实现可以在其子类中完成，Kotlin 中使用高阶函数可以避免继承的方式。Template.kt访问者访问者模式提供一个作用于某对象结构中的各元素的操作表示，它使我们可以在不改变各元素的类的前提下定义作用于这些元素的新操作。Visitor.kt]]></content>
-      <categories>
-        <category>kotlin</category>
-      </categories>
-      <tags>
-        <tag>kotlin</tag>
-        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
