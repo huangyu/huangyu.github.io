@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://huangyu.github.io/archives/fd455f4d.html</loc>
-    <lastmod>2019-06-14T03:14:12.637Z</lastmod>
+    <lastmod>2019-06-14T03:22:05.000Z</lastmod>
     <data>
         <display>
         <title>登录密码正则表达式</title>
@@ -32,6 +32,26 @@
         <pubTime>2019-01-14T09:08:52.000Z</pubTime>
         
         <tag>SMTP</tag>
+         
+         
+           
+             
+              <breadCrumb title="邮件" url="https://huangyu.github.io/categories/%E9%82%AE%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://huangyu.github.io/archives/42d18a47.html</loc>
+    <lastmod>2019-06-11T03:39:27.741Z</lastmod>
+    <data>
+        <display>
+        <title>IMAP协议操作示例</title>
+        <pubTime>2019-01-06T02:33:39.000Z</pubTime>
+        
+        <tag>IMAP</tag>
          
          
            
